@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Website Blocker List",
+  "version": "1.0",
+  "description": "Block multiple websites with easy list management",
+  "permissions": [
+    "storage",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+     
+      "16": "block_16dp_E8EAED_FILL0_wght400_GRAD0_opsz20.png",
+      "48": "block_48dp_E8EAED_FILL0_wght400_GRAD0_opsz48.png",
+      "128": "block_128dp_E8EAED_FILL0_wght400_GRAD0_opsz48.png"
+     
+    }
+  }
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      width: 350px;
+      padding: 15px;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header h2 {
+      margin: 0;
+      color: #1a1a1a;
+    }
+    .input-group {
+      display: flex;
+      gap: 8px;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      resize: vertical;
+      font-family: inherit;
+    }
+    .button-group {
+      display: flex;
+      gap: 8px;
+    }
+    button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+    .primary-btn {
+      background-color: #2563eb;
+      color: white;
+    }
+    .primary-btn:hover {
+      background-color: #1d4ed8;
+    }
+    .secondary-btn {
+      background-color: #e5e7eb;
+      color: #374151;
+    }
+    .secondary-btn:hover {
+      background-color: #d1d5db;
+    }
+    .danger-btn {
+      background-color: #dc2626;
+      color: white;
+    }
+    .danger-btn:hover {
+      background-color: #b91c1c;
+    }
+    .site-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .site-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 12px;
+      background-color: #f3f4f6;
+      border-radius: 4px;
+    }
+    .site-domain {
+      font-family: monospace;
+      color: #374151;
+    }
+    .status-text {
+      font-size: 0.875rem;
+      color: #6b7280;
+      text-align: center;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>Website Blocker</h2>
+      <button id="toggleInput" class="secondary-btn">Add Sites</button>
+    </div>
+
+    <div id="inputSection" style="display: none;">
+      <textarea id="siteInput" placeholder="Enter websites to block (one per line):
+example.com
+another-site.com"></textarea>
+      <div class="button-group">
+        <button id="addSites" class="primary-btn">Add to Blocklist</button>
+        <button id="cancelAdd" class="secondary-btn">Cancel</button>
+      </div>
+    </div>
+
+    <div id="siteList" class="site-list"></div>
+    
+    <div class="button-group">
+      <button id="clearAll" class="danger-btn">Clear All Sites</button>
+      <button id="exportList" class="secondary-btn">Export List</button>
+    </div>
+    
+    <div id="status" class="status-text"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
